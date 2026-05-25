@@ -1,0 +1,163 @@
+/*
+  SEG3525 – Devoir 1 · Portfolio
+  FICHIER 04 : Démo de la Typographie
+  ──────────────────────────────────────────────────────────────────
+  Ce fichier illustre les 6 règles du cours sur la typographie.
+  Ouvrez 04_demo_typographie.html pour voir le rendu.
+*/
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 01 – Choisir des polices qui reflètent la personnalité
+   ──────────────────────────────────────────────────────────────
+   Importez vos polices depuis Google Fonts dans le <head> HTML :
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700
+              &family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+══════════════════════════════════════════════════════════════════ */
+
+/* Exemples de combinaisons de polices (choisissez-en UNE) */
+
+/* Combo A – Moderne / Tech */
+.font-combo-a {
+  --font-heading: 'Poppins', sans-serif;
+  --font-body:    'Inter',   sans-serif;
+}
+
+/* Combo B – Classique / Élégant */
+.font-combo-b {
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Lato', sans-serif;
+}
+
+/* Combo C – Minimaliste */
+.font-combo-c {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body:    'Roboto', sans-serif;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 02 – Utiliser les polices pour l'organisation
+   ──────────────────────────────────────────────────────────────
+   Maximum 4 rôles distincts de police.
+   Chacun est associé à un sens (principe de cohérence).
+══════════════════════════════════════════════════════════════════ */
+:root {
+  --font-heading:     'Poppins',  sans-serif;  /* Rôle 1 : Titres        */
+  --font-body:        'Inter',    sans-serif;  /* Rôle 2 : Corps de texte */
+  --font-ui:          'Inter',    sans-serif;  /* Rôle 3 : Labels UI      */
+  --font-code:        'Fira Code', monospace;  /* Rôle 4 : Code           */
+  /* 4 rôles maximum = règle respectée ✓ */
+}
+
+h1, h2, h3, h4            { font-family: var(--font-heading); }
+p, li, blockquote, td, th { font-family: var(--font-body); }
+label, button, .nav-link  { font-family: var(--font-ui); }
+code, pre, kbd             { font-family: var(--font-code); }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 03 – Utiliser les polices pour mettre en valeur
+   ──────────────────────────────────────────────────────────────
+   Gras, italique, capitales : toujours avec intention.
+   Pas plus de 3 mises en valeur par paragraphe.
+══════════════════════════════════════════════════════════════════ */
+
+/* Mise en évidence dans un texte courant */
+.highlight-text { color: #E94F37; font-weight: 600; }  /* Accent couleur  */
+.emphasis-text  { font-style: italic; }                 /* Emphase légère  */
+.strong-text    { font-weight: 700; }                   /* Affirmation     */
+
+/* ✗ À ÉVITER : trop de styles différents */
+/* .bad-mix { color: red; font-style: italic; text-decoration: underline; font-weight: bold; } */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 04 – Hiérarchie visuelle typographique
+   ──────────────────────────────────────────────────────────────
+   Principe : taille = importance.
+   Utilisez seulement 2–4 tailles distinctes sur une page.
+══════════════════════════════════════════════════════════════════ */
+
+/*
+  Échelle typographique recommandée (modular scale ratio 1.25) :
+  ┌──────┬──────────┬────────────────────────────────────────────────┐
+  │ Tag  │  Taille  │  Usage                                         │
+  ├──────┼──────────┼────────────────────────────────────────────────┤
+  │ h1   │  3.05rem │  Titre principal de la page (hero)             │
+  │ h2   │  2.44rem │  Titre de section                              │
+  │ h3   │  1.95rem │  Titre de sous-section / carte                 │
+  │ h4   │  1.56rem │  Libellé de groupe                             │
+  │ p    │  1.00rem │  Corps de texte (16px)                         │
+  │ small│  0.80rem │  Légende, date, tag                            │
+  └──────┴──────────┴────────────────────────────────────────────────┘
+  
+  clamp(min, préféré, max) → responsive sans media queries !
+*/
+h1 { font-size: clamp(2rem,   5vw, 3.05rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.44rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.95rem); font-weight: 600; }
+h4 { font-size: clamp(1rem,   2.5vw, 1.56rem); font-weight: 600; }
+p  { font-size: 1rem; line-height: 1.75; }
+small, .text-sm { font-size: 0.8rem; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 05 – Éviter les polices de fantaisie et les trop petites
+   ──────────────────────────────────────────────────────────────
+   Minimum 14px pour le texte lisible. 12px pour les légendes.
+   Jamais de police cursive ou décorative pour le corps de texte.
+══════════════════════════════════════════════════════════════════ */
+
+/* ✗ Mauvais exemple – fantaisie + trop petit */
+.bad-font-example {
+  font-family: 'Papyrus', fantasy;  /* ✗ Éviter */
+  font-size: 10px;                   /* ✗ Trop petit */
+}
+
+/* ✓ Bon exemple – sobre + lisible */
+.good-font-example {
+  font-family: 'Inter', sans-serif;  /* ✓ Sans-serif sobre */
+  font-size: 1rem;                   /* ✓ 16px minimum    */
+  line-height: 1.75;                 /* ✓ Espacement confortable */
+}
+
+/* Si un texte est trop petit pour être lu → lien "Voir plus" plutôt */
+.truncated-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;      /* Affiche max 3 lignes */
+  -webkit-box-orient: vertical;
+  font-size: 0.9rem;           /* Acceptable pour preview */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 06 – Alignement du texte
+   ──────────────────────────────────────────────────────────────
+   • Gauche  : paragraphes longs → œil revient à gauche facilement
+   • Centre  : titres courts, CTA → emphase symétrique
+   • Droite  : délimitation d'espace, dates, labels de formulaire
+   • Justifié: déconseillé sur écran (espaces irréguliers)
+══════════════════════════════════════════════════════════════════ */
+
+.text-align-demo-left    { text-align: left;   } /* ✓ Corps de texte     */
+.text-align-demo-center  { text-align: center; } /* ✓ Titres de section  */
+.text-align-demo-right   { text-align: right;  } /* ✓ Dates, labels      */
+
+/* ✗ Éviter le justify pour les paragraphes longs */
+/* .text-justify { text-align: justify; } */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   BONUS – Espacement des lettres et des lignes
+══════════════════════════════════════════════════════════════════ */
+
+/* Titres : légèrement serré pour solidité */
+h1, h2 { letter-spacing: -0.02em; }
+
+/* Texte de navigation / labels : légèrement espacé pour aération */
+.nav-link, .badge, label { letter-spacing: 0.03em; }
+
+/* Espacement inter-paragraphes */
+p + p { margin-top: 1rem; }

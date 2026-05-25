@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Playground – SEG3525</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f9fa;
+      padding-bottom: 4rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* ── étiquette en haut ── */
+    .playground-header {
+      background: #1A1A2E;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .playground-header .badge-bs {
+      background: #E94F37;
+      color: #fff;
+      font-size: .75rem;
+      padding: .3rem .7rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barre de titre -->
+  <div class="playground-header">
+    <i class="bi bi-play-circle-fill fs-4 text-warning"></i>
+    <span class="fs-5 fw-semibold">Bootstrap Playground</span>
+    <span class="badge-bs">SEG3525</span>
+    <small class="ms-auto text-white-50">Collez vos exemples Bootstrap ci-dessous ↓</small>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║  COLLEZ VOS EXEMPLES BOOTSTRAP ICI          ║
+       ╚══════════════════════════════════════════════╝ -->
+  <div class="container">
+
+    <!-- ↓↓↓ Exemple 1 – Boutons ↓↓↓ -->
+    <div class="mb-5">
+      <h5 class="text-muted mb-3"><i class="bi bi-code-slash me-1"></i> Exemple 1 — Boutons</h5>
+
+      <!-- COPIEZ-COLLEZ ICI -->
+      <button type="button" class="btn btn-primary me-2">Primary</button>
+      <button type="button" class="btn btn-secondary me-2">Secondary</button>
+      <button type="button" class="btn btn-success me-2">Success</button>
+      <button type="button" class="btn btn-danger me-2">Danger</button>
+      <button type="button" class="btn btn-warning me-2">Warning</button>
+      <button type="button" class="btn btn-outline-primary me-2">Outline</button>
+      <!-- FIN EXEMPLE 1 -->
+
+    </div>
+
+    <!-- ↓↓↓ Exemple 2 – Cards ↓↓↓ -->
+    <div class="mb-5">
+      <h5 class="text-muted mb-3"><i class="bi bi-code-slash me-1"></i> Exemple 2 — Cards</h5>
+
+      <!-- COPIEZ-COLLEZ ICI -->
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Carte 1</h5>
+              <p class="card-text">Texte de la carte. Description courte du projet ou de la section.</p>
+              <a href="#" class="btn btn-primary">Voir plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Carte 2</h5>
+              <p class="card-text">Texte de la carte. Description courte du projet ou de la section.</p>
+              <a href="#" class="btn btn-outline-secondary">Voir plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Carte 3</h5>
+              <p class="card-text">Texte de la carte. Description courte du projet ou de la section.</p>
+              <a href="#" class="btn btn-outline-secondary">Voir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN EXEMPLE 2 -->
+
+    </div>
+
+    <!-- ↓↓↓ Exemple 3 – Alerts & Badges ↓↓↓ -->
+    <div class="mb-5">
+      <h5 class="text-muted mb-3"><i class="bi bi-code-slash me-1"></i> Exemple 3 — Alerts &amp; Badges</h5>
+
+      <!-- COPIEZ-COLLEZ ICI -->
+      <div class="alert alert-primary" role="alert">
+        <i class="bi bi-info-circle-fill me-2"></i><strong>Info :</strong> Ceci est une alerte Bootstrap de type <code>alert-primary</code>.
+      </div>
+      <div class="alert alert-success" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i><strong>Succès !</strong> Action effectuée avec succès.
+      </div>
+      <div class="alert alert-danger" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i><strong>Erreur :</strong> Quelque chose s'est mal passé.
+      </div>
+      <div class="mt-3">
+        <span class="badge bg-primary me-1">HTML</span>
+        <span class="badge bg-success me-1">CSS</span>
+        <span class="badge bg-warning text-dark me-1">JavaScript</span>
+        <span class="badge bg-danger me-1">Bootstrap</span>
+        <span class="badge bg-secondary me-1">Figma</span>
+      </div>
+      <!-- FIN EXEMPLE 3 -->
+
+    </div>
+
+    <!-- ↓↓↓ Espace libre – collez vos propres composants ici ↓↓↓ -->
+    <div class="mb-5">
+      <h5 class="text-muted mb-3"><i class="bi bi-plus-circle me-1"></i> Votre exemple</h5>
+      <!-- COPIEZ-COLLEZ ICI -->
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>      <!-- FIN -->
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+  </div>
+</div>
+    </div>
+<a class="btn btn-primary" href="#" role="button">Link</a>
+<button class="btn btn-primary" type="submit">Button</button>
+<input class="btn btn-primary" type="button" value="Input">
+<input class="btn btn-primary" type="submit" value="Submit">
+<input class="btn btn-primary" type="reset" value="Reset">
+  </div>
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"> <div class="col mb-3"> <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap"> <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> </a> <p class="text-body-secondary">© 2025</p> </div> <div class="col mb-3"></div> <div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column"> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> </ul> </div> <div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column"> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> </ul> </div> <div class="col mb-3"> <h5>Section</h5> <ul class="nav flex-column"> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li> <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li> </ul> </div> </footer>
+  <!-- ══════════════════════════════════════════════ -->
+
+  <!-- Bootstrap 5.3.3 JS Bundle (Popper inclus) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

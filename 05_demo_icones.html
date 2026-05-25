@@ -1,0 +1,227 @@
+<!--
+  SEG3525 – Devoir 1 · Portfolio
+  FICHIER 05 : Démo des Icônes (Bootstrap Icons)
+  ──────────────────────────────────────────────────────────────────
+  Ouvrez ce fichier dans votre navigateur pour voir les exemples.
+  Aucune installation requise — tout est en CDN.
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Démo Icônes – SEG3525</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body { background: #1A1A2E; color: #E0E0E0; font-family: 'Inter', sans-serif; }
+    .demo-card { background: #16213E; border: 1px solid rgba(255,255,255,.07);
+                 border-radius: 1rem; padding: 1.5rem; }
+    .section-title { color: #E94F37; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+    code { color: #06D6A0; font-size: .85rem; }
+    .icon-grid i { font-size: 2rem; color: #E94F37; margin: .5rem; cursor: pointer;
+                   transition: transform .2s; }
+    .icon-grid i:hover { transform: scale(1.3); }
+    .good { border-left: 4px solid #06D6A0; background: rgba(6,214,160,.08);
+            padding: .75rem 1rem; border-radius: .25rem; }
+    .bad  { border-left: 4px solid #E94F37; background: rgba(233,79,55,.08);
+            padding: .75rem 1rem; border-radius: .25rem; }
+  </style>
+</head>
+<body class="p-4">
+
+  <h1 class="mb-4">🎨 Démo Iconographie – SEG3525 Devoir 1</h1>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1 : Comment inclure Bootstrap Icons
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="demo-card mb-4">
+    <div class="section-title">① Inclure Bootstrap Icons dans votre HTML</div>
+    <p class="mb-3">Ajoutez ce <code>&lt;link&gt;</code> dans le <code>&lt;head&gt;</code> de votre page :</p>
+    <pre class="bg-dark p-3 rounded"><code>&lt;link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"&gt;</code></pre>
+    <p class="mt-3">Ensuite, utilisez simplement la balise <code>&lt;i&gt;</code> avec la classe correspondante :</p>
+    <pre class="bg-dark p-3 rounded"><code>&lt;i class="bi bi-house-fill"&gt;&lt;/i&gt;
+&lt;i class="bi bi-envelope"&gt;&lt;/i&gt;
+&lt;i class="bi bi-github"&gt;&lt;/i&gt;</code></pre>
+    <div class="mt-3">
+      Résultat :
+      <i class="bi bi-house-fill fs-3 text-primary ms-3"></i>
+      <i class="bi bi-envelope fs-3 text-primary ms-3"></i>
+      <i class="bi bi-github fs-3 text-primary ms-3"></i>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2 : Icônes standards recommandées pour un portfolio
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="demo-card mb-4">
+    <div class="section-title">② Icônes standards pour votre portfolio</div>
+    <p class="mb-3">Ces icônes sont universellement reconnaissables (principe du cours) :</p>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <table class="table table-dark table-sm">
+          <thead><tr><th>Icône</th><th>Classe</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><i class="bi bi-house-fill text-primary fs-5"></i></td>
+              <td><code>bi-house-fill</code></td>
+              <td>Lien Accueil</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-person-fill text-primary fs-5"></i></td>
+              <td><code>bi-person-fill</code></td>
+              <td>À propos</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-briefcase-fill text-primary fs-5"></i></td>
+              <td><code>bi-briefcase-fill</code></td>
+              <td>Projets / Travail</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-envelope-fill text-primary fs-5"></i></td>
+              <td><code>bi-envelope-fill</code></td>
+              <td>Contact</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-github text-primary fs-5"></i></td>
+              <td><code>bi-github</code></td>
+              <td>GitHub</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-linkedin text-primary fs-5"></i></td>
+              <td><code>bi-linkedin</code></td>
+              <td>LinkedIn</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-dark table-sm">
+          <thead><tr><th>Icône</th><th>Classe</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><i class="bi bi-arrow-right text-primary fs-5"></i></td>
+              <td><code>bi-arrow-right</code></td>
+              <td>Navigation / CTA</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+              <td><code>bi-check-circle-fill</code></td>
+              <td>Compétence / Succès</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-bar-chart-fill text-primary fs-5"></i></td>
+              <td><code>bi-bar-chart-fill</code></td>
+              <td>Analytics / BI</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-cart-fill text-primary fs-5"></i></td>
+              <td><code>bi-cart-fill</code></td>
+              <td>E-commerce</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-controller text-primary fs-5"></i></td>
+              <td><code>bi-controller</code></td>
+              <td>Jeu / Mémoire</td>
+            </tr>
+            <tr>
+              <td><i class="bi bi-scissors text-primary fs-5"></i></td>
+              <td><code>bi-scissors</code></td>
+              <td>Coiffeur / Services</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3 : Règles du cours illustrées
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="demo-card mb-4">
+    <div class="section-title">③ Règles du cours illustrées</div>
+
+    <div class="row g-3 mb-4">
+      <!-- BON EXEMPLE -->
+      <div class="col-md-6">
+        <div class="good">
+          <strong class="text-success">✓ BON – Style cohérent</strong>
+          <p class="mb-2 mt-2">Toutes les icônes du même ensemble, même taille :</p>
+          <div>
+            <i class="bi bi-house-fill fs-4 text-primary me-3"></i>
+            <i class="bi bi-person-fill fs-4 text-primary me-3"></i>
+            <i class="bi bi-briefcase-fill fs-4 text-primary me-3"></i>
+            <i class="bi bi-envelope-fill fs-4 text-primary"></i>
+          </div>
+          <code class="d-block mt-2">Famille : Bootstrap Icons · Taille : fs-4 · Couleur : text-primary</code>
+        </div>
+      </div>
+      <!-- MAUVAIS EXEMPLE -->
+      <div class="col-md-6">
+        <div class="bad">
+          <strong class="text-danger">✗ MAUVAIS – Style incohérent</strong>
+          <p class="mb-2 mt-2">Mix de bibliothèques, tailles et couleurs différentes :</p>
+          <div>
+            <i class="bi bi-house" style="font-size:2.5rem; color:red;"></i>
+            <i class="bi bi-person-fill" style="font-size:1rem; color:yellow;"></i>
+            <i class="bi bi-briefcase" style="font-size:3rem; color:green;"></i>
+          </div>
+          <code class="d-block mt-2">Tailles: 2.5rem / 1rem / 3rem · Couleurs: 3 différentes</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICÔNE + TEXTE pour icônes non-standards -->
+    <div class="good mb-3">
+      <strong class="text-success">✓ BON – Icône non-standard accompagnée de texte</strong>
+      <p class="mb-2 mt-2">
+        Si l'icône n'est pas universelle, ajoutez un label :
+      </p>
+      <div class="d-flex gap-4 flex-wrap">
+        <div class="text-center">
+          <i class="bi bi-mortarboard-fill fs-2 d-block text-primary"></i>
+          <small>Formation</small>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-palette-fill fs-2 d-block text-primary"></i>
+          <small>Design</small>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-cpu-fill fs-2 d-block text-primary"></i>
+          <small>Technique</small>
+        </div>
+      </div>
+      <code class="d-block mt-2">
+        &lt;i class="bi bi-mortarboard-fill fs-2 d-block text-primary"&gt;&lt;/i&gt;<br>
+        &lt;small&gt;Formation&lt;/small&gt;
+      </code>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4 : Accessibilité des icônes
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="demo-card mb-4">
+    <div class="section-title">④ Accessibilité (aria-label)</div>
+    <p>Les icônes seules ne sont pas lisibles par les lecteurs d'écran.
+       Ajoutez <code>aria-label</code> ou un texte masqué :</p>
+    <pre class="bg-dark p-3 rounded"><code>&lt;!-- Icône décorative (aucune valeur sémantique) --&gt;
+&lt;i class="bi bi-star-fill" aria-hidden="true"&gt;&lt;/i&gt;
+
+&lt;!-- Icône fonctionnelle (bouton / lien) --&gt;
+&lt;button aria-label="Envoyer un courriel"&gt;
+  &lt;i class="bi bi-envelope-fill" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- Icône avec texte visible (idéal) --&gt;
+&lt;a href="mailto:vous@uottawa.ca"&gt;
+  &lt;i class="bi bi-envelope me-1" aria-hidden="true"&gt;&lt;/i&gt;
+  Contactez-moi
+&lt;/a&gt;</code></pre>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

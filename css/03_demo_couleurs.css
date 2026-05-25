@@ -1,0 +1,171 @@
+/*
+  SEG3525 – Devoir 1 · Portfolio
+  FICHIER 03 : Démo des Couleurs
+  ──────────────────────────────────────────────────────────────────
+  Ce fichier illustre les 6 règles du cours sur les couleurs.
+  Chaque section explique un principe et montre un exemple CSS.
+  Ouvrez 03_demo_couleurs.html dans votre navigateur pour voir
+  le résultat en direct.
+*/
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 01 – Choisir des couleurs qui reflètent la personnalité
+   ──────────────────────────────────────────────────────────────
+   Conseil : Décidez d'abord l'émotion que vous voulez transmettre,
+   puis choisissez votre teinte en conséquence.
+   
+   Exemples de personnalités :
+   ┌─────────────────┬───────────────────────────────────────────────┐
+   │ Personnalité     │ Direction de couleur                         │
+   ├─────────────────┼───────────────────────────────────────────────┤
+   │ Professionnel   │ Bleu froid, gris neutre, blanc                │
+   │ Créatif / Artsy │ Violet, corail, dégradés               │
+   │ Technique / Dev │ Vert foncé (terminal), navy, noir        │
+   │ Chaleureux      │ Orange, jaune doux, beige                    │
+   └─────────────────┴───────────────────────────────────────────────┘
+══════════════════════════════════════════════════════════════════ */
+
+/* Palette "Professionnel tech" */
+.theme-tech {
+  --c1: #0A192F;   /* fond principal – navy très foncé */
+  --c2: #112240;   /* fond cartes */
+  --c3: #64FFDA;   /* accent – vert-cyan vif */
+  --c4: #8892B0;   /* texte secondaire */
+  --c5: #CCD6F6;   /* texte principal */
+}
+
+/* Palette "Créatif/Artsy" */
+.theme-creative {
+  --c1: #F8F3EF;   /* fond – beige très clair */
+  --c2: #1D1D1D;   /* texte principal */
+  --c3: #E94F37;   /* accent – rouge-corail */
+  --c4: #5C5C5C;   /* texte secondaire */
+  --c5: #393E46;   /* fond sections alternées */
+}
+
+/* Palette "Chaleureux" */
+.theme-warm {
+  --c1: #FFFBF2;   /* fond crème */
+  --c2: #2C2C2C;   /* texte */
+  --c3: #FF8C42;   /* accent – orange */
+  --c4: #6B6B6B;   /* texte secondaire */
+  --c5: #FFF1DB;   /* fond sections alternées */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 02 – Limiter à 2–4 couleurs
+   ──────────────────────────────────────────────────────────────
+   Utilisez des variables CSS pour forcer la cohérence.
+   En ne définissant vos couleurs qu'ici, vous les changez partout.
+══════════════════════════════════════════════════════════════════ */
+:root {
+  /* ★ ADAPTEZ CES VALEURS POUR VOTRE PORTFOLIO ★ */
+  --palette-bg:        #1A1A2E;  /* Couleur 1 : fond principal     */
+  --palette-bg-alt:    #16213E;  /* Couleur 2 : fond alternatif    */
+  --palette-accent:    #E94F37;  /* Couleur 3 : accent principal   */
+  --palette-text:      #E0E0E0;  /* Couleur 4 : texte principal    */
+  /* 2–4 couleurs = règle respectée ✓ */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 03 – Penser MONOCHROME d'abord
+   ──────────────────────────────────────────────────────────────
+   Commencez en niveaux de gris pour vérifier la hiérarchie.
+   Ajoutez les couleurs APRÈS que la mise en page est claire.
+══════════════════════════════════════════════════════════════════ */
+
+/* Classe utilitaire pour tester en monochrome (à ajouter sur <body>) */
+.debug-monochrome {
+  filter: grayscale(100%);
+  /* Si votre layout est encore lisible ici → hiérarchie correcte ✓ */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 04 – Contraste texte / fond (WCAG AA : ratio ≥ 4.5:1)
+   ──────────────────────────────────────────────────────────────
+   Outil en ligne : https://webaim.org/resources/contrastchecker/
+   
+   Exemples conformes :
+   • Blanc #FFFFFF sur navy #1A1A2E → ratio ≈ 16:1  ✓
+   • Gris #9E9E9E sur navy #1A1A2E → ratio ≈  5:1  ✓ (tout juste)
+   • Jaune #FFD700 sur blanc #FFF  → ratio ≈  1.9:1 ✗ INVALIDE
+══════════════════════════════════════════════════════════════════ */
+
+.text-contrast-ok    { color: #FFFFFF; background: #1A1A2E; } /* ✓ */
+.text-contrast-bad   { color: #FFD700; background: #FFFFFF; } /* ✗ */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 05 – Couleur pour attirer l'attention (CTA, navigation)
+   ──────────────────────────────────────────────────────────────
+   La couleur d'accent ne doit apparaître que sur les éléments
+   les plus importants → bouton principal, lien actif, icône clé.
+══════════════════════════════════════════════════════════════════ */
+
+.btn-cta {
+  background-color: var(--palette-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn-cta:hover {
+  background-color: #c0392b;
+  transform: scale(1.04);
+}
+
+/* Lien actif dans la navigation */
+.nav-link.active {
+  color: var(--palette-accent) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--palette-accent);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   RÈGLE 06 – Couleur pour indiquer des états
+   ──────────────────────────────────────────────────────────────
+   États classiques : normal · survol · actif · désactivé · visité
+══════════════════════════════════════════════════════════════════ */
+
+/* Carte cliquable – 4 états */
+.card-interactive { transition: all 0.3s; cursor: pointer; }
+.card-interactive:hover     { border-color: var(--palette-accent); transform: translateY(-4px); }
+.card-interactive:active    { transform: scale(0.98); }
+.card-interactive.disabled  { opacity: 0.45; pointer-events: none; }
+.card-interactive.visited   { border-color: rgba(233,79,55,0.3); }
+
+/* Indicateur d'état "disponible / à venir" */
+.badge-available  { background-color: #06D6A0; color: #000; }
+.badge-coming     { background-color: #9E9E9E; color: #fff; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   BONUS – Accessibilité daltonisme
+   ──────────────────────────────────────────────────────────────
+   Ne jamais utiliser la couleur SEULE pour transmettre une info.
+   Toujours combiner avec un texte, une icône ou un motif.
+══════════════════════════════════════════════════════════════════ */
+
+/* ✗ Mauvais : couleur seule */
+.status-bad-practice { background: red; }
+
+/* ✓ Bon : couleur + icône + texte */
+.status-error {
+  background: rgba(220, 53, 69, 0.15);
+  border-left: 4px solid #DC3545;
+  padding: 0.75rem 1rem;
+}
+.status-error::before { content: "✗ Erreur : "; font-weight: bold; color: #DC3545; }
+
+.status-success {
+  background: rgba(25, 135, 84, 0.15);
+  border-left: 4px solid #198754;
+  padding: 0.75rem 1rem;
+}
+.status-success::before { content: "✓ Succès : "; font-weight: bold; color: #198754; }

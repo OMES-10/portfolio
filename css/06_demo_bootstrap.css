@@ -1,0 +1,174 @@
+/*
+  SEG3525 – Devoir 1 · Portfolio
+  FICHIER 06 : Démonstration Bootstrap 5 – Grille et Composants
+  ──────────────────────────────────────────────────────────────────
+  Ouvrez 06_demo_bootstrap.html pour voir ce fichier en action.
+*/
+
+
+/* ══════════════════════════════════════════════════════════════════
+   NOTE IMPORTANTE : Bootstrap se charge AVANT ce fichier.
+   ──────────────────────────────────────────────────────────────
+   Ordre dans le HTML :
+   1. <link> Bootstrap CSS   ← les bases
+   2. <link> votre style.css ← vos surcharges viennent APRÈS
+   ══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPRENDRE LA GRILLE BOOTSTRAP (12 colonnes)
+   ──────────────────────────────────────────────────────────────
+   
+   Structure de base :
+   <div class="container">
+     <div class="row">
+       <div class="col-md-6"> Colonne gauche </div>
+       <div class="col-md-6"> Colonne droite </div>
+     </div>
+   </div>
+   
+   Points de rupture (breakpoints) :
+   ┌────────┬────────────┬──────────────────────────────────────────┐
+   │ Classe │  Largeur   │  Appareil cible                          │
+   ├────────┼────────────┼──────────────────────────────────────────┤
+   │ col-   │  < 576px   │  Téléphone portrait                      │
+   │ col-sm │  ≥ 576px   │  Téléphone paysage                       │
+   │ col-md │  ≥ 768px   │  Tablette                                │
+   │ col-lg │  ≥ 992px   │  Ordinateur portable                     │
+   │ col-xl │  ≥ 1200px  │  Grand écran                             │
+   └────────┴────────────┴──────────────────────────────────────────┘
+   
+   Exemples pour les 4 cartes de projets :
+   • col-12 col-sm-6 col-xl-3 →
+       Mobile  : 1 colonne (100%)
+       Tablette: 2 colonnes (50%)
+       Desktop : 4 colonnes (25%)
+══════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPOSANT 1 – NAVBAR responsive
+   ──────────────────────────────────────────────────────────────
+   Classe Bootstrap : navbar navbar-expand-lg
+
+   navbar-expand-lg = affiche le menu horizontal à partir de lg.
+   En dessous de lg : bouton hamburger (collapse).
+
+   ATTENTION : Pour que le hamburger fonctionne, vous DEVEZ
+   inclure bootstrap.bundle.min.js à la fin du <body>.
+══════════════════════════════════════════════════════════════════ */
+
+/* Surcharge de la navbar Bootstrap */
+.navbar {
+  background: rgba(26, 26, 46, 0.96) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.navbar .navbar-brand { font-weight: 700; }
+.navbar .nav-link     { font-size: .95rem; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPOSANT 2 – CARD (carte de projet)
+   ──────────────────────────────────────────────────────────────
+   Structure HTML minimale d'une card Bootstrap :
+   
+   <div class="card">
+     <img src="..." class="card-img-top" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">Titre</h5>
+       <p  class="card-text">Description</p>
+       <a  class="btn btn-primary" href="#">Voir</a>
+     </div>
+   </div>
+══════════════════════════════════════════════════════════════════ */
+
+.card {
+  background: #0F3460;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(233,79,55,0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;   /* L'image remplit le cadre sans déformer */
+}
+
+.card-body      { padding: 1.25rem; }
+.card-title     { color: #fff; font-weight: 600; margin-bottom: .5rem; }
+.card-text      { color: #9E9E9E; font-size: .9rem; }
+.card-footer    { background: transparent; border-top: 1px solid rgba(255,255,255,.07); }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPOSANT 3 – BOUTONS
+   ──────────────────────────────────────────────────────────────
+   Hiérarchie des boutons (principe de communication visuelle) :
+   
+   • Bouton primaire   (btn-primary)        → Action principale / CTA
+   • Bouton secondaire (btn-outline-light)  → Action alternative
+   • Bouton tertiaire  (btn-link)           → Action mineure
+   
+   Ne jamais avoir deux boutons primaires au même niveau !
+══════════════════════════════════════════════════════════════════ */
+
+.btn { border-radius: .5rem; font-weight: 500; transition: all .25s; }
+.btn-primary { background: #E94F37; border-color: #E94F37; }
+.btn-primary:hover  { background: #c0392b; border-color: #c0392b; transform: translateY(-2px); }
+.btn-lg { padding: .75rem 1.75rem; font-size: 1rem; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPOSANT 4 – BADGES (états et étiquettes)
+   ──────────────────────────────────────────────────────────────
+   Exemple d'utilisation : <span class="badge bg-primary">Design 1</span>
+   
+   Règle iconographie appliquée : couleur + texte = état clair.
+══════════════════════════════════════════════════════════════════ */
+
+.badge {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: .35rem;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   COMPOSANT 5 – SECTIONS avec id (ancres)
+   ──────────────────────────────────────────────────────────────
+   Chaque section principale a un id pour la navigation par ancres.
+   L'offset-top compense la navbar fixe.
+══════════════════════════════════════════════════════════════════ */
+
+/* Compenser la hauteur de la navbar fixe pour les ancres */
+section[id] { scroll-margin-top: 80px; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   UTILITAIRES PERSONNALISÉS complémentaires Bootstrap
+══════════════════════════════════════════════════════════════════ */
+
+/* Espacements de section cohérents */
+.py-section  { padding: 5rem 0; }
+.py-section-sm { padding: 3rem 0; }
+
+/* Titre de section avec ligne décorative */
+.section-header { text-align: center; }
+.section-header h2 { font-weight: 700; }
+.section-divider {
+  width: 55px; height: 4px;
+  background: #E94F37;
+  border-radius: 2px;
+  margin: .75rem auto 0;
+}
+
+/* Fond alternatif pour sections */
+.bg-section-alt { background: #16213E; }
